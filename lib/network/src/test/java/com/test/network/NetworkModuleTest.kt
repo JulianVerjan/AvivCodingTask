@@ -23,7 +23,7 @@ class NetworkModuleTest {
 
     @Test
     fun verifyProvidedRetrofitBuilder() {
-        val retrofit = networkModule.provideRetrofitBuilder(mock())
+        val retrofit = networkModule.provideRetrofitBuilder(mock(), mock())
         assertEquals(
             BuildConfig.API_BASE_URL,
             retrofit.baseUrl().toString()
