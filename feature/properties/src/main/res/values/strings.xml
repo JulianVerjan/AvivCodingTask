@@ -1,0 +1,15 @@
+<resources>
+    <string name="main_screen_title">Properties</string>
+    <string name="screen_details_title">Details</string>
+    <string name="screen_properties_loading_title">Loading</string>
+    <string name="screen_properties_error_title">Something went wrong with the connection</string>
+    <string name="screen_properties_unknown_error_title">Unknown error</string>
+    <string name="screen_details_bedrooms">Bedrooms: %d</string>
+    <string name="screen_details_area">Area: %d m²</string>
+    <string name="screen_details_price">Price: %s</string>
+    <string name="screen_details_professional">Professional: %s</string>
+    <string name="screen_details_type">Type: %s</string>
+    <string name="screen_details_offer">Offer: %d</string>
+    <string name="screen_details_rooms">Rooms: %d</string>
+
+</resources>

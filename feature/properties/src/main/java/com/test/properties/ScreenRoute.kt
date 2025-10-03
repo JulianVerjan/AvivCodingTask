@@ -1,0 +1,8 @@
+package com.test.properties
+
+sealed class ScreenRoute(val route: String) {
+    object PropertiesScreenRoute: ScreenRoute("properties_screen")
+    object PropertyDetailScreenRoute: ScreenRoute("property_detail_screen/{id}"){
+        fun createRoute(id: Int) = "property_detail_screen/$id"
+    }
+}
