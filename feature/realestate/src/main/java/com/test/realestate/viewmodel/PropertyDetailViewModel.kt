@@ -32,8 +32,8 @@ class PropertyDetailViewModel @Inject constructor(
 
     private fun fetchPropertyDetail() {
         viewModelScope.launch {
-            val id: Int = savedStateHandle["id"] ?: 0
-            val uiState = when (val properties = getPropertyUseCase.invoke(id)) {
+            val listingId: Int = savedStateHandle.get<Int>(LISTING_ID_KEY) ?: 0
+            val uiState = when (val properties = getPropertyUseCase.invoke(parameter = listingId)) {
                 is NetworkResult.Success -> {
                     PropertyDetailUiState.Complete(
                         uiModel = properties.result?.toPropertyUiModel()
@@ -45,5 +45,9 @@ class PropertyDetailViewModel @Inject constructor(
             }
             _propertyDetailMutableStateFlow.update { uiState }
         }
+    }
+
+    companion object {
+        const val LISTING_ID_KEY = "listingId"
     }
 }

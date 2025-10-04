@@ -17,6 +17,7 @@ import androidx.navigation.navArgument
 import com.test.realestate.listpage.PropertiesScreen
 import com.test.realestate.detailspage.PropertyDetailScreen
 import com.test.realestate.ui.theme.AvivTaskTheme
+import com.test.realestate.viewmodel.PropertyDetailViewModel.Companion.LISTING_ID_KEY
 import dagger.hilt.android.AndroidEntryPoint
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -42,7 +43,7 @@ class MainActivity : ComponentActivity() {
 
                         composable(
                             route = ScreenRoute.PropertyDetailScreenRoute.route,
-                            arguments = listOf(navArgument("id") { type = NavType.IntType })
+                            arguments = listOf(navArgument(LISTING_ID_KEY) { type = NavType.IntType })
                         ) {
                             PropertyDetailScreen(navController = navController)
                         }
