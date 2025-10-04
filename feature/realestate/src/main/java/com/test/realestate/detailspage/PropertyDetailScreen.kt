@@ -30,9 +30,9 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.test.realestate.R
-import com.test.realestate.compose.ErrorLottieAnimation
-import com.test.realestate.model.PropertyDetailUiModel
+import com.test.realestate.compose.CenteredAnimation
 import com.test.realestate.listpage.PropertiesScreen
+import com.test.realestate.model.PropertyDetailUiModel
 import com.test.realestate.state.PropertyDetailUiState
 import com.test.realestate.ui.theme.AvivTaskTheme
 import com.test.realestate.ui.theme.BlueGrey
@@ -78,7 +78,7 @@ fun PropertyDetailScreen(
                 }
             }
 
-            PropertyDetailUiState.Error.Connection -> ErrorLottieAnimation(
+            PropertyDetailUiState.Error.Connection -> CenteredAnimation(
                 file = R.raw.no_internet,
                 modifier = Modifier
                     .padding(
@@ -86,7 +86,7 @@ fun PropertyDetailScreen(
                     )
             )
 
-            PropertyDetailUiState.Error.Unknown -> ErrorLottieAnimation(
+            PropertyDetailUiState.Error.Unknown -> CenteredAnimation(
                 file = R.raw.unknown_error,
                 modifier = Modifier
                     .padding(
@@ -94,7 +94,7 @@ fun PropertyDetailScreen(
                     )
             )
 
-            PropertyDetailUiState.Loading -> ErrorLottieAnimation(
+            PropertyDetailUiState.Loading -> CenteredAnimation(
                 file = R.raw.loading,
                 modifier = Modifier
                     .padding(

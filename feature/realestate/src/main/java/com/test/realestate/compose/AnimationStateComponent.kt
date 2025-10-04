@@ -16,22 +16,30 @@ import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
 
 @Composable
-fun ErrorLottieAnimation(
+fun CenteredAnimation(
+    modifier: Modifier = Modifier,
+    @RawRes file: Int
+) {
+    Box(
+        modifier = modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        StateAnimation(file = file)
+    }
+}
+
+@Composable
+private fun StateAnimation(
     modifier: Modifier = Modifier,
     animationSize: Dp = 250.dp,
     @RawRes file: Int
 ) {
     val lottieFile = LottieCompositionSpec.RawRes(file)
     val composition by rememberLottieComposition(spec = lottieFile)
-    Box(
-        modifier = modifier
-            .fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        LottieAnimation(
-            modifier = modifier.size(animationSize),
-            composition = composition,
-            iterations = LottieConstants.IterateForever,
-        )
-    }
+
+    LottieAnimation(
+        modifier = modifier.size(animationSize),
+        composition = composition,
+        iterations = LottieConstants.IterateForever,
+    )
 }

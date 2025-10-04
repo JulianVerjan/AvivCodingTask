@@ -20,7 +20,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.test.realestate.R
 import com.test.realestate.ScreenRoute
-import com.test.realestate.compose.ErrorLottieAnimation
+import com.test.realestate.compose.CenteredAnimation
 import com.test.realestate.state.PropertiesUiState
 import com.test.realestate.ui.theme.AvivTaskTheme
 import com.test.realestate.ui.theme.BlueGrey
@@ -62,9 +62,9 @@ fun PropertiesScreen(
                     }
                 )
 
-                PropertiesUiState.Error.Connection -> ErrorLottieAnimation(file = R.raw.no_internet)
-                PropertiesUiState.Error.Unknown -> ErrorLottieAnimation(file = R.raw.unknown_error)
-                PropertiesUiState.Loading -> ErrorLottieAnimation(file = R.raw.loading)
+                PropertiesUiState.Error.Connection -> CenteredAnimation(file = R.raw.no_internet)
+                PropertiesUiState.Error.Unknown -> CenteredAnimation(file = R.raw.unknown_error)
+                PropertiesUiState.Loading -> CenteredAnimation(file = R.raw.loading)
             }
         }
     }
