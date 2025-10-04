@@ -47,7 +47,7 @@ android {
 
 dependencies {
 
-    implementation(project(":feature:properties"))
+    implementation(project(":feature:realestate"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
