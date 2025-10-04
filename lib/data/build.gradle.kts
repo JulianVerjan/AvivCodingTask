@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.kotlin.coroutines.core)
     implementation(libs.network.retrofit.core)
     implementation(libs.network.retrofit.scalars)
+    implementation(libs.retrofit.converter.moshi)
+    implementation(libs.moshi.kotlin)
 
     implementation(libs.kotlin.test)
 
