@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "com.test.properties"
+    namespace = "com.test.realestate"
     compileSdk = 36
 
     defaultConfig {
