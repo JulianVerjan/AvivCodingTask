@@ -35,7 +35,7 @@ import com.test.realestate.compose.LoadingIndicator
 import com.test.realestate.compose.UnknownIndicator
 import com.test.realestate.model.PropertyDetailUiModel
 import com.test.realestate.listpage.PropertiesScreen
-import com.test.realestate.states.PropertyDetailUiState
+import com.test.realestate.state.PropertyDetailUiState
 import com.test.realestate.ui.theme.AvivTaskTheme
 import com.test.realestate.ui.theme.PurpleGrey80
 import com.test.realestate.viewmodel.PropertyDetailViewModel

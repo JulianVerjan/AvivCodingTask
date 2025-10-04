@@ -24,7 +24,7 @@ import com.test.realestate.ScreenRoute
 import com.test.realestate.compose.ErrorIndicator
 import com.test.realestate.compose.LoadingIndicator
 import com.test.realestate.compose.UnknownIndicator
-import com.test.realestate.states.PropertiesUiState
+import com.test.realestate.state.PropertiesUiState
 import com.test.realestate.ui.theme.AvivTaskTheme
 import com.test.realestate.ui.theme.PurpleGrey80
 import com.test.realestate.ui.theme.White

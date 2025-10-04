@@ -2,7 +2,7 @@ package com.test.realestate.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.test.realestate.states.PropertiesUiState
+import com.test.realestate.state.PropertiesUiState
 import com.test.realestate.model.mapper.toPropertyUiModelList
 import com.test.domain.networkresult.NetworkResult
 import com.test.domain.usecase.GetPropertiesUseCase

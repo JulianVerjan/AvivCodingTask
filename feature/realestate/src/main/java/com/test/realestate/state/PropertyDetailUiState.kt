@@ -1,21 +1,20 @@
-package com.test.realestate.states
+package com.test.realestate.state
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Immutable
 import com.test.realestate.R
-import com.test.realestate.model.PropertyUiModel
-import kotlinx.collections.immutable.ImmutableList
+import com.test.realestate.model.PropertyDetailUiModel
 
 @Immutable
-sealed class PropertiesUiState {
-    data object Loading : PropertiesUiState()
+sealed class PropertyDetailUiState {
+    data object Loading : PropertyDetailUiState()
 
     data class Complete(
-        val uiModels: ImmutableList<PropertyUiModel>,
-    ) : PropertiesUiState()
+        val uiModel: PropertyDetailUiModel?,
+    ) : PropertyDetailUiState()
 
-    sealed class Error : PropertiesUiState() {
+    sealed class Error : PropertyDetailUiState() {
 
         @get:StringRes
         abstract val errorMessageStringResource: Int

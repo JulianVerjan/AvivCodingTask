@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.test.realestate.model.PropertyUiModel
-import com.test.realestate.states.PropertiesUiState
+import com.test.realestate.state.PropertiesUiState
 import com.test.realestate.ui.theme.AvivTaskTheme
 import kotlinx.collections.immutable.persistentListOf
 

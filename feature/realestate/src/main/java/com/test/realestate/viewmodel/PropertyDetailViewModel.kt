@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.test.domain.networkresult.NetworkResult
 import com.test.domain.usecase.GetPropertyUseCase
 import com.test.realestate.model.mapper.toPropertyUiModel
-import com.test.realestate.states.PropertyDetailUiState
+import com.test.realestate.state.PropertyDetailUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
