@@ -1,6 +1,5 @@
 package com.test.realestate.listpage
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -21,13 +20,10 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.test.realestate.R
 import com.test.realestate.ScreenRoute
-import com.test.realestate.compose.ErrorIndicator
-import com.test.realestate.compose.LoadingIndicator
-import com.test.realestate.compose.UnknownIndicator
+import com.test.realestate.compose.ErrorLottieAnimation
 import com.test.realestate.state.PropertiesUiState
 import com.test.realestate.ui.theme.AvivTaskTheme
-import com.test.realestate.ui.theme.PurpleGrey80
-import com.test.realestate.ui.theme.White
+import com.test.realestate.ui.theme.BlueGrey
 import com.test.realestate.viewmodel.PropertiesViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -44,7 +40,7 @@ fun PropertiesScreen(
             TopAppBar(
                 title = { Text(stringResource(R.string.main_screen_title)) },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = PurpleGrey80,
+                    containerColor = BlueGrey,
                     titleContentColor = Color.White,
                     navigationIconContentColor = Color.White,
                     actionIconContentColor = Color.White
@@ -55,8 +51,7 @@ fun PropertiesScreen(
         Column(
             modifier = modifier
                 .padding(innerPadding)
-                .fillMaxSize()
-                .background(White),
+                .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             when (state.value) {
@@ -67,9 +62,9 @@ fun PropertiesScreen(
                     }
                 )
 
-                PropertiesUiState.Error.Connection -> ErrorIndicator()
-                PropertiesUiState.Error.Unknown -> UnknownIndicator()
-                PropertiesUiState.Loading -> LoadingIndicator()
+                PropertiesUiState.Error.Connection -> ErrorLottieAnimation(file = R.raw.no_internet)
+                PropertiesUiState.Error.Unknown -> ErrorLottieAnimation(file = R.raw.unknown_error)
+                PropertiesUiState.Loading -> ErrorLottieAnimation(file = R.raw.loading)
             }
         }
     }

@@ -3,7 +3,7 @@ package com.test.realestate.ui.theme
 import androidx.compose.ui.graphics.Color
 
 val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
+val BlueGrey = Color(0xFF63A0CA)
 val White = Color(0xFFFFFFFF)
 val Pink80 = Color(0xFFEFB8C8)
 val Green = Color(0xFF00BCD4)

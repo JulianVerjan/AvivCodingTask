@@ -30,14 +30,12 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.test.realestate.R
-import com.test.realestate.compose.ErrorIndicator
-import com.test.realestate.compose.LoadingIndicator
-import com.test.realestate.compose.UnknownIndicator
+import com.test.realestate.compose.ErrorLottieAnimation
 import com.test.realestate.model.PropertyDetailUiModel
 import com.test.realestate.listpage.PropertiesScreen
 import com.test.realestate.state.PropertyDetailUiState
 import com.test.realestate.ui.theme.AvivTaskTheme
-import com.test.realestate.ui.theme.PurpleGrey80
+import com.test.realestate.ui.theme.BlueGrey
 import com.test.realestate.viewmodel.PropertyDetailViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -61,7 +59,7 @@ fun PropertyDetailScreen(
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = PurpleGrey80,
+                    containerColor = BlueGrey,
                     titleContentColor = Color.White,
                     navigationIconContentColor = Color.White,
                     actionIconContentColor = Color.White
@@ -80,28 +78,28 @@ fun PropertyDetailScreen(
                 }
             }
 
-            PropertyDetailUiState.Error.Connection -> ErrorIndicator(
+            PropertyDetailUiState.Error.Connection -> ErrorLottieAnimation(
+                file = R.raw.no_internet,
                 modifier = Modifier
                     .padding(
                         innerPadding
                     )
-                    .fillMaxSize()
             )
 
-            PropertyDetailUiState.Error.Unknown -> UnknownIndicator(
+            PropertyDetailUiState.Error.Unknown -> ErrorLottieAnimation(
+                file = R.raw.unknown_error,
                 modifier = Modifier
                     .padding(
                         innerPadding
                     )
-                    .fillMaxSize()
             )
 
-            PropertyDetailUiState.Loading -> LoadingIndicator(
+            PropertyDetailUiState.Loading -> ErrorLottieAnimation(
+                file = R.raw.loading,
                 modifier = Modifier
                     .padding(
                         innerPadding
                     )
-                    .fillMaxSize()
             )
         }
     }

@@ -26,7 +26,7 @@ import coil.compose.AsyncImage
 import com.test.realestate.R
 import com.test.realestate.model.PropertyUiModel
 import com.test.realestate.ui.theme.AvivTaskTheme
-import com.test.realestate.ui.theme.PurpleGrey80
+import com.test.realestate.ui.theme.BlueGrey
 
 @Composable
 fun PropertyItem(
@@ -42,7 +42,7 @@ fun PropertyItem(
         shape = RectangleShape,
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
     ) {
-        Column(modifier = Modifier.background(PurpleGrey80)) {
+        Column(modifier = Modifier.background(BlueGrey)) {
             PropertyImage(imageUrl = propertyUiModel.url)
             PropertyInfo(propertyUiModel = propertyUiModel)
         }
